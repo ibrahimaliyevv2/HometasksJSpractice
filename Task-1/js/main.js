@@ -4,9 +4,9 @@ let windowBox = document.querySelector("window-box");
 windowBox.addEventListener("click",getClickPosition, false);
 
 function getClickPosition(e){
-    let xPosition = e.clientX - (circle.offsetWidth/2);
-    let yPosition = e.clientY - (circle.offsetHeight/2);
+    circle.offsetLeft = e.clientX - (circle.offsetWidth/2);
+    circle.offsetTop = e.clientY - (circle.offsetHeight/2);
 
-    let translate = "translate3d(" + xPosition + "px," + yPosition + "px, 0)";
+    let translate = "translate3d(" + offsetLeft + "px," + offsetTop + "px, 0)";
     circle.style.transform = translate;
 }
